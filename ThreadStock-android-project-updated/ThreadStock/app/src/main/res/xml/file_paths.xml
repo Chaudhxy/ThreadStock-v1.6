@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- backups are copied here for a moment so Google Drive / WhatsApp can read them -->
+    <cache-path name="share" path="share/" />
+</paths>

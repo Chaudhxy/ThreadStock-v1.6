@@ -1,0 +1,95 @@
+THREADSTOCK - HOW TO GET YOUR APK (signed release)
+===================================================
+
+What you get from GitHub in about 5 minutes (free, no Android Studio needed):
+
+  1. ThreadStock-APK            -> app-release.apk   (install on your phone)
+  2. ThreadStock-PlayStore-AAB  -> app-release.aab   (upload to Google Play)
+
+Both are signed with the ThreadStock release key that is inside this folder (keystore/).
+The app works fully offline. Your data stays on the phone.
+
+
+STEPS
+-----
+1. Unzip this file on your computer.
+
+2. Go to github.com and sign in (a free account is fine).
+
+3. Click "+" (top right) -> "New repository".
+   Name: threadstock      Choose: PRIVATE (important, see "KEEP IT PRIVATE")      Click "Create repository".
+
+4. On the new page click "uploading an existing file".
+   Drag EVERYTHING from the unzipped folder into the page:
+   the folders "app", ".github", "keystore", "play-store" and the files
+   settings.gradle, build.gradle, gradle.properties, keystore.properties ...
+   Click "Commit changes".
+
+   If your computer hides folders that start with a dot, see "IF THE BUILD DOES NOT START".
+
+5. Click the "Actions" tab. "Build ThreadStock" starts by itself.
+   (If it does not: click it -> "Run workflow" -> green "Run workflow".)
+   Wait for the green tick (3 to 6 minutes).
+
+6. Click the finished run. Under "Artifacts" at the bottom:
+   - "ThreadStock-APK" -> unzip it -> app-release.apk
+   - "ThreadStock-PlayStore-AAB" -> unzip it -> app-release.aab (only needed for Google Play)
+
+7. Send app-release.apk to your phone (WhatsApp to yourself, USB cable or Google Drive).
+   Tap it and tap Install. Open "ThreadStock".
+
+
+ABOUT THE "INSTALL UNKNOWN APPS" WARNING  (please read)
+-------------------------------------------------------
+- Android shows "Install unknown apps" for ANY app installed from a file, however it is signed.
+  The signed release APK is the correct, proper build, but a file install will still ask once
+  (allow it for WhatsApp / Files / Drive, whichever app you opened the APK from).
+- The warning only disappears when the app comes from Google Play.
+  That is why the AAB is included: see PLAY-STORE-GUIDE.txt.
+- Google Play's "Internal testing" link is the quickest way: you install from Play on your own
+  phone, with no unknown-apps prompt, even before the app is public.
+
+
+IF YOU ALREADY HAVE AN OLDER VERSION ON YOUR PHONE
+--------------------------------------------------
+- The old "Thread Shop" app is a different app. It can stay next to ThreadStock.
+- To move your data: in the OLD app open More -> Backup -> save the backup file.
+  In ThreadStock open More -> Backup -> Choose backup file -> pick that file.
+- If you installed an earlier ThreadStock test APK (the "debug" one), Android will refuse to update it
+  because the signing key is different. Back up first, uninstall it, then install this one and restore.
+- Uninstalling an app deletes its data, so always back up first.
+
+
+KEEP IT PRIVATE, AND KEEP THE KEY SAFE
+--------------------------------------
+- The file keystore/threadstock-release.jks is your app's signing key, and its password is in
+  keystore.properties. Anyone who has them can publish apps pretending to be yours.
+  So the GitHub repository MUST be Private.
+- Keep a copy of the keystore/ folder and keystore.properties somewhere safe (Google Drive,
+  a USB stick). If both the repository and your copy are lost, you can no longer update the
+  installed app in place: you would have to uninstall it (losing its data) and install a newly signed one.
+- When you upload to Google Play, turn on "Play App Signing". Google then keeps the real signing key,
+  and this key becomes only your "upload key", which Google can reset if you ever lose it.
+
+
+IF THE BUILD DOES NOT START
+---------------------------
+GitHub only builds if the file .github/workflows/build-apk.yml exists.
+If your upload skipped the hidden ".github" folder:
+  - In the repository click "Add file" -> "Create new file".
+  - In the name box type exactly:  .github/workflows/build-apk.yml
+  - Open the included file build-apk.yml.txt, copy everything, paste it in, click "Commit changes".
+
+IF THE BUILD SHOWS A RED CROSS
+------------------------------
+Open the failed run, copy the red error text and send it to Claude. It can be fixed quickly.
+(This build could not be test-compiled where it was written, so a small fix on the first run is possible.)
+
+
+GOOD TO KNOW
+------------
+- Back up often: More -> Backup -> "Save to Google Drive" or "Save to this phone".
+- To change shop name, logo, address and phone on receipts: More -> Settings -> Receipt and shop info.
+- Fingerprint unlock: More -> Settings -> Security (set an owner PIN first).
+- To release an update later: raise versionCode (1 -> 2) and versionName in app/build.gradle,
+  commit, and download the new files from the Actions tab. Google Play only accepts a higher versionCode.

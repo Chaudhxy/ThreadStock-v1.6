@@ -1,0 +1,76 @@
+THREADSTOCK - GOOGLE PLAY LISTING TEXTS
+=======================================
+
+App name (max 30)
+  ThreadStock
+
+Category: Business        Tags: Inventory, Billing, Point of sale
+Contact: (your email / phone / website: your choice)
+
+----- SHORT DESCRIPTION (max 80) -----
+English:
+  Offline stock, sales and credit (udhaar) manager for thread and sewing shops.
+
+Urdu:
+  تھریڈ اور سلائی کی دکان کے لیے آف لائن اسٹاک، فروخت اور ادھار کا حساب۔
+
+----- FULL DESCRIPTION (English) -----
+ThreadStock is a simple shop manager for thread, yarn, embroidery and sewing-supply shops.
+It works fully offline, so it is fast and always available. Your data stays on your phone.
+
+STOCK
+- Products with colours and shade codes, category groups, low-stock reorder list
+- Bulk price changes and quick stock-in
+
+SALES
+- Cash, Credit (udhaar) and Online sales
+- Online payments: Bank Transfer (choose from all Pakistani banks and enter the account number),
+  JazzCash, Easypaisa, NayaPay and SadaPay (enter the wallet number)
+- See where each online payment was received, with bank and wallet logos
+- Filter sales by All, Cash, Credit and Online
+- Returns and exchanges
+
+RECEIPTS
+- Professional invoice with your logo, shop name, address and phone, date and time
+- Print, save as PDF or image, share on WhatsApp
+
+CUSTOMERS AND SUPPLIERS
+- Customer credit ledger, due dates, payments received
+- Supplier balances
+
+REPORTS
+- Daily and monthly sales, cash, credit and online totals, profit, expenses
+
+SAFETY
+- Owner PIN, staff PINs and fingerprint unlock
+- Backup to Google Drive or your phone, restore at any time
+
+LANGUAGES: English and Urdu (right-to-left), light and dark mode.
+
+----- FULL DESCRIPTION (Urdu) -----
+تھریڈ اسٹاک دھاگے، کڑھائی اور سلائی کے سامان کی دکانوں کے لیے آسان حساب کتاب کی ایپ ہے۔
+یہ مکمل طور پر آف لائن چلتی ہے اور آپ کا ڈیٹا آپ کے فون ہی میں رہتا ہے۔
+
+اسٹاک: رنگوں اور شیڈ کوڈ کے ساتھ مصنوعات، کیٹیگریز، کم اسٹاک کی فہرست
+فروخت: کیش، ادھار اور آن لائن۔ آن لائن میں بینک ٹرانسفر (پاکستان کے تمام بینک اور اکاؤنٹ نمبر)، جاز کیش، ایزی پیسہ، نیا پے اور سداپے (نمبر)
+رسید: لوگو، دکان کا نام، پتہ، تاریخ اور وقت کے ساتھ انوائس۔ پرنٹ، پی ڈی ایف، تصویر اور واٹس ایپ
+گاہک اور سپلائر: ادھار کھاتہ، ادائیگیاں، واپسی اور تبادلہ
+رپورٹس: روزانہ اور ماہانہ فروخت، منافع، اخراجات
+حفاظت: PIN، اسٹاف PIN، فنگر پرنٹ، گوگل ڈرائیو بیک اپ
+
+----- DATA SAFETY FORM (suggested answers: check them against the real app when you submit) -----
+Does the app collect or share user data?          No
+  The app has no account, no analytics, no ads and no server. All data stays on the device.
+Is data encrypted in transit?                     Not applicable (no data is sent)
+Can users ask for data deletion?                  Yes: More -> Settings -> Erase all data, or uninstall the app
+Backups: the user chooses to save a backup file and share it (for example to their own Google Drive).
+         The app itself does not upload anything.
+
+----- CONTENT RATING (IARC questionnaire hints) -----
+Category: Utility / Productivity / Business.   No violence, no sexual content, no gambling,
+no user-generated content shared between users, no location, no purchases inside the app.
+Expected rating: Everyone.
+
+----- OTHER FORM ANSWERS -----
+Ads: No.  In-app purchases: No.  Target audience: 18 and over.  News app: No.  Government app: No.
+Permissions: biometric (fingerprint) only.

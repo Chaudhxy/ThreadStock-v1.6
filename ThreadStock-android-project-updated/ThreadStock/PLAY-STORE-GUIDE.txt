@@ -1,0 +1,48 @@
+THREADSTOCK - PUTTING THE APP ON GOOGLE PLAY
+=============================================
+
+Why: apps from Google Play install without the "unknown apps" warning, update by themselves,
+and are required if you want other shops to download it.
+
+You need
+--------
+- A Google Play developer account (one-time registration fee of about US$25, paid to Google).
+  Create it at play.google.com/console. Google checks your identity.
+- The file app-release.aab from the GitHub build (artifact "ThreadStock-PlayStore-AAB").
+- The assets in the play-store folder:
+    icon-512.png                      app icon (512 x 512)
+    feature-graphic-1024x500.png      feature graphic
+    screenshots/1..7 (1080 x 1920)    phone screenshots
+    listing.txt                       title, short and full description (English and Urdu)
+    privacy-policy.html               privacy policy page (see step 3)
+
+Steps in Play Console
+---------------------
+1. Create app. Name: ThreadStock. Language: English (you can add Urdu). App (not game). Free.
+2. Set up your app -> fill each task. Use listing.txt for the answers (Data safety, content rating hints).
+3. Privacy policy: Play needs a web address for it.
+   Open play-store/privacy-policy.html, put your contact email where it says YOUR-EMAIL-HERE,
+   then publish the page for free (for example GitHub Pages on a public repository, or any free site).
+   Paste that link in Play Console. Do NOT put the signing key repository public to do this;
+   use a separate public repository that contains only privacy-policy.html.
+4. Production or testing:
+   - Internal testing (fastest, up to 100 testers by email): Testing -> Internal testing -> Create release ->
+     upload app-release.aab -> add your own Gmail as a tester -> open the opt-in link on your phone ->
+     install from Play. No unknown-apps prompt.
+   - Production: Google may ask new accounts to run a closed test with testers for some days before
+     production is allowed. The Play Console shows exactly what it requires for your account.
+5. Turn on Play App Signing when asked (recommended). Accept the default.
+6. Store listing: paste texts from listing.txt, upload icon-512.png, feature graphic and the screenshots.
+7. Send for review. First review usually takes from a few hours to a few days.
+
+Updating later
+--------------
+Increase versionCode and versionName in app/build.gradle, commit on GitHub, download the new AAB,
+create a new release in Play Console. The same signing key must be used (it is in keystore/).
+
+Notes
+-----
+- Package name: com.threadstock.app. It can never change after the first upload.
+- The app asks for no dangerous permissions. It uses the phone's fingerprint prompt only if you turn it on.
+- Google is introducing developer verification for apps installed outside Play. Apps published through
+  Play go through your Play developer account. Check Google's current announcement for the dates.

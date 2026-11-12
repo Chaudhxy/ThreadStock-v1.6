@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.application'
+}
+
+// Signing details come from keystore.properties (included in this project) or, if you prefer to keep
+// them out of the repository, from these environment variables / GitHub secrets:
+//   KEYSTORE_FILE  KEYSTORE_PASSWORD  KEY_ALIAS  KEY_PASSWORD
+def keystoreProps = new Properties()
+def keystoreFile = rootProject.file('keystore.properties')
+if (keystoreFile.exists()) {
+    keystoreFile.withInputStream { keystoreProps.load(it) }
+}
+def signValue = { String envName, String propName ->
+    System.getenv(envName) ?: keystoreProps.getProperty(propName)
+}
+
+android {
+    namespace 'com.threadstock.app'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "com.threadstock.app"
+        minSdk 29
+        targetSdk 36
+        versionCode 3
+        versionName "1.2"
+    }
+
+    signingConfigs {
+        release {
+            def file = signValue('KEYSTORE_FILE', 'storeFile')
+            if (file) {
+                storeFile rootProject.file(file)
+                storePassword signValue('KEYSTORE_PASSWORD', 'storePassword')
+                keyAlias signValue('KEY_ALIAS', 'keyAlias')
+                keyPassword signValue('KEY_PASSWORD', 'keyPassword')
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        // lint only gives advice here; it must not stop the release build
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
+
+dependencies {
+    implementation 'androidx.webkit:webkit:1.11.0'
+    implementation 'androidx.core:core:1.13.1'
+}
